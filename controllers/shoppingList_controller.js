@@ -1,21 +1,25 @@
 const shoppingList_model = require('../models/shoppingList-model');
 const shoppingList_view = require('../views/shoppingList-view');
+const product_model =require('../models/product-model');
 
+//haetaan käyttäjän ostoslistat
 const get_shoppingLists = (req, res, next) => {
     const user = req.user;
     user.populate('shoppingLists')
         .execPopulate()
         .then(() => {
-            console.log('user:', user);
-            let data = {
+            console.log('User:', user);
+            //tietyn käyttäjän ostoslistat
+            let dataShoppingList = {
                 user_name: user.name,
                 shoppingLists: user.shoppingLists
             };
-            let html = shoppingList_view.shoppingList_view(data);
+            let html = shoppingList_view.shoppingLists_view(dataShoppingList);
             res.send(html);
         });
 };
 
+//poistetaan ostoslista
 const post_delete_shoppingList = (req, res, next) => {
     const user = req.user;
     const shoppingList_id_to_delete = req.body.shoppingList_id;
@@ -34,15 +38,17 @@ const post_delete_shoppingList = (req, res, next) => {
     });
 };
 
+//haetaan tietty ostoslista
 const get_shoppingList = (req, res, next) => {
     const shoppingList_id = req.params.id;
     shoppingList_model.findOne({
         _id: shoppingList_id
     }).then((shoppingList) => {
-        let data = {
-            text: shoppingList.text
+        let dataShoppingList = {
+            nameShoppingList: shoppingList.text,
+            product: []
         };
-        let html = shoppingList_view.shoppingList_view(data);
+        let html = shoppingList_view.shoppingList_view(dataShoppingList);
         res.send(html);
     });
 };
@@ -50,7 +56,8 @@ const get_shoppingList = (req, res, next) => {
 const post_shoppingList = (req, res, next) => {
     const user = req.user;
     let new_shoppingList = shoppingList_model({
-        text: req.body.shoppingList
+        nameShoppingList: req.body.shoppingList,
+        products: []
     });
     new_shoppingList.save().then(() => {
         console.log('Shopping list saved');

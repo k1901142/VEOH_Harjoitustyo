@@ -1,4 +1,4 @@
-const shoppingList_model = require('../models/shoppingList-model');
+/*const shoppingList_model = require('../models/shoppingList-model');
 const shoppingList_view = require('../views/shoppingList-view');
 
 const get_shoppingLists = (req, res, next) => {
@@ -64,4 +64,4 @@ const post_shoppingList = (req, res, next) => {
 module.exports.get_shoppingLists = get_shoppingLists;
 module.exports.get_shoppingList = get_shoppingList;
 module.exports.post_shoppingList = post_shoppingList;
-module.exports.post_delete_shoppingList = post_delete_shoppingList;
+module.exports.post_delete_shoppingList = post_delete_shoppingList;*/
