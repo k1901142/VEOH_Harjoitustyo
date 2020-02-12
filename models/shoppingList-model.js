@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const shoppingList_schema = new Schema({
-    name: {
+    nameShoppingList: {
         type: String,
         required: true
     },
