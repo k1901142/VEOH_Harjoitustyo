@@ -1,7 +1,8 @@
-const product_view = ((data) => {
+/*const product_view = ((data) => {
     let html = `
     <html>
     <body>
+        <!-- linkki paluu pääsivulle-->
         Shopping list: ${data.user_name}
         <form action="/logout" method="POST">
             <button type="submit">Log out</button>
@@ -19,9 +20,14 @@ const product_view = ((data) => {
     });
 
     html += `
-        <form action="/add-shoppingList" method="POST">
-            <input type="text" name="shoppingList">
-            <button type="submit">Add shopping list</button>
+        <form action="/add-product" method="POST">
+            Product:
+            <input type="text" name="product">
+            Image:
+            <input type="url" name="url_image">
+            Quantity:
+            <input type="number" name="quantity" min="0" max="10">
+            <button type="submit">Add new product</button>
         </form>
     </html>
     </body>
@@ -29,4 +35,4 @@ const product_view = ((data) => {
     return html;
 });
 
-module.exports.shoppingList_view = shoppingList_view;
+module.exports.product_view = product_view;*/
