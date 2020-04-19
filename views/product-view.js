@@ -1,18 +1,22 @@
-/*const product_view = ((data) => {
+/*
+const products_view = ((dataProducts) => {
     let html = `
     <html>
+    <h1>Products</h1>
     <body>
         <!-- linkki paluu pääsivulle-->
-        Shopping list: ${data.user_name}
+        Shopping list: ${dataProducts.user_name}//linkin nimi
         <form action="/logout" method="POST">
             <button type="submit">Log out</button>
-        </form>`;
+        </form>
+        `;
 
 
-    data.shoppingLists.forEach((shoppingList) => {
-        html += shoppingList.text;
+    dataProducts.products.forEach((product) => {
+        html += product.text;
+        //kuva
         html += `
-            <form action="delete-shoppingList" method="POST">
+            <form action="delete-product" method="POST">
                 <input type="hidden" name="shoppingList_id" value="${shoppingList._id}">
                 <button type="submit">Delete shopping list</button>
             </form>
@@ -79,3 +83,39 @@ module.exports.product_view = product_view;
 =======
 module.exports.product_view = product_view;
 >>>>>>> Commit*/
+
+const shoppingLists_view = ((dataShoppingLists) => {
+    let html = `
+    <html>
+    <h1>Shopping lists</h1>
+    <body>
+        Logged in as user: ${dataShoppingLists.user_name}
+        <form action="/logout" method="POST">
+            <button type="submit">Log out</button>
+        </form>
+        `;
+
+
+        dataShoppingLists.shoppingLists.forEach((shoppingList) => {
+            html += //shoppingList.nameShoppingList; 
+            `           
+             <p><a href="/">${shoppingList.nameShoppingList}</a></p>
+             `;
+            html += `
+                <form action="/delete-shoppingList" method="POST">
+                    <input type="hidden" name="shoppingList_id" value="${shoppingList._id}">
+                    <button type="submit">Delete shopping list</button>
+                </form>
+            `;
+        });
+
+        html += `
+            <form action="/add-shoppingList" method="POST">
+                <input type="text" name="shoppingList">
+                <button type="submit">Add new shopping list</button>
+            </form>
+    </html>
+    </body>
+    `;
+    return html;
+});

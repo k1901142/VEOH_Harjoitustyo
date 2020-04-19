@@ -1,6 +1,7 @@
 const shoppingLists_view = ((dataShoppingLists) => {
     let html = `
     <html>
+    <h1>Shopping lists</h1>
     <body>
         Logged in as user: ${dataShoppingLists.user_name}
         <form action="/logout" method="POST">
@@ -36,6 +37,7 @@ const shoppingLists_view = ((dataShoppingLists) => {
 const shoppingList_view = (dataShoppingLists) => {
     let html=`
     <html>
+    <h1>Tätä metsästetään!</h1>
     <body>
         Shopping lists: ${dataShoppingLists.nameShoppingList}
     </body>
