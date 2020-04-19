@@ -125,6 +125,7 @@ const is_logged_handler = (req, res, next) => {
     if (!req.session.user) {
         return res.redirect('/login');
     }
+    console.log('Ollaan is_logged_handlerissa');
     next();
 };
 
@@ -147,11 +148,14 @@ app.post('/logout', auth_controller.post_logout);
 //Shopping Lists
 app.get('/', is_logged_handler, shoppingList_controller.get_shoppingLists);
 app.post('/delete-shoppingList', is_logged_handler, shoppingList_controller.post_delete_shoppingList);
-app.get('/shoppingList/:id', is_logged_handler, shoppingList_controller.get_shoppingList);
+app.get('/add-products', is_logged_handler, shoppingList_controller.get_shoppingList);
 app.post('/add-shoppingList', is_logged_handler, shoppingList_controller.post_shoppingList);
 
 //Products
-
+//app.get('/Home', function (req,res) { res.sendFile('/Home.html', {root: __dirname}) })
+//console.log('Nyt products app.get: add-products');
+app.get('/add-products', is_logged_handler, product_controller.get_products);
+//app.post('/update-products'), is_logged_handler, product_controller.post_products;
 
 app.use((req, res, next) => {
     res.status(404);
