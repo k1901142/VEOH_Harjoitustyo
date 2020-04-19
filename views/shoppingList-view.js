@@ -61,10 +61,13 @@ const shoppingLists_view = ((dataShoppingLists) => {
 
 
         dataShoppingLists.shoppingLists.forEach((shoppingList) => {
-            html += //shoppingList.nameShoppingList; 
-            `           
-             <p><a href="/">${shoppingList.nameShoppingList}</a></p>
-             `;
+            /*html += `           
+             <form action="/add-products" method="POST"
+                <input type="hidden" name="shoppingList_id" value=<a href="/add-products">${shoppingList.nameShoppingList}</a>
+             `;*/
+            html += `
+            <a href="/add-products/${shoppingList._id}">${shoppingList.nameShoppingList}</a>
+            `;
             html += `
                 <form action="/delete-shoppingList" method="POST">
                     <input type="hidden" name="shoppingList_id" value="${shoppingList._id}">

@@ -120,10 +120,10 @@ const get_shoppingList = (req, res, next) => {
         _id: shoppingList_id
     }).then((shoppingList) => {
         let dataShoppingList = {
-            nameShoppingList: shoppingList.text,
+            nameShoppingList: shoppingList.nameShoppingList,
             product: []
         };
-        let html = shoppingList_view.shoppingList_view(dataShoppingList);
+        let html = product_view.product_view(dataShoppingList);
         res.send(html);
     });
 };

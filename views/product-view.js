@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*const product_view = ((data) => {
     let html = `
     <html>
@@ -38,25 +39,27 @@
 
 =======
 /*const product_view = ((data) => {
+=======
+const product_view = ((productData) => {
+>>>>>>> Commit
     let html = `
     <html>
     <body>
-        <!-- linkki paluu pääsivulle-->
-        Shopping list: ${data.user_name}
+        Shopping list: ${shoppingList.shoppingListName}
         <form action="/logout" method="POST">
             <button type="submit">Log out</button>
         </form>`;
 
 
-    data.shoppingLists.forEach((shoppingList) => {
-        html += shoppingList.text;
+    /*data.shoppingList.forEach((product) => {
+        html += shoppingList.nameShoppingList;
         html += `
             <form action="delete-shoppingList" method="POST">
                 <input type="hidden" name="shoppingList_id" value="${shoppingList._id}">
                 <button type="submit">Delete shopping list</button>
             </form>
             `;
-    });
+    });*/
 
     html += `
         <form action="/add-product" method="POST">
@@ -74,5 +77,9 @@
     return html;
 });
 
+<<<<<<< HEAD
 >>>>>>> Ostoslista-tasolle asti toteutettu
 module.exports.product_view = product_view;*/
+=======
+module.exports.product_view = product_view;
+>>>>>>> Commit
