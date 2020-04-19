@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require('express');
 const PORT = process.env.PORT || 8080;
 const body_parser = require('body-parser');
@@ -85,7 +84,8 @@ mongoose.connect(mongoose_url, {
     console.log('Start Express server');
     app.listen(PORT);
 });
-=======
+
+/*
 const express = require('express');
 const PORT = process.env.PORT || 8080;
 const body_parser = require('body-parser');
@@ -176,4 +176,4 @@ mongoose.connect(mongoose_url, {
     console.log('Start Express server');
     app.listen(PORT);
 });
->>>>>>> Ostoslista-tasolle asti toteutettu
+*/
