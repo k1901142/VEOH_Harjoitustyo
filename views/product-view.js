@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*const product_view = ((data) => {
     let html = `
     <html>
@@ -37,11 +35,9 @@
     return html;
 });
 
-=======
 /*const product_view = ((data) => {
 =======
 const product_view = ((productData) => {
->>>>>>> Commit
     let html = `
     <html>
     <body>
@@ -61,7 +57,7 @@ const product_view = ((productData) => {
             `;
     });*/
 
-    html += `
+   /* html += `
         <form action="/add-product" method="POST">
             Product:
             <input type="text" name="product">
@@ -75,11 +71,11 @@ const product_view = ((productData) => {
     </body>
     `;
     return html;
-});
+});*/
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 >>>>>>> Ostoslista-tasolle asti toteutettu
-module.exports.product_view = product_view;*/
+module.exports.product_view = product_view;
 =======
 module.exports.product_view = product_view;
->>>>>>> Commit
+>>>>>>> Commit*/

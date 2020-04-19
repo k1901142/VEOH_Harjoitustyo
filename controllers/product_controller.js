@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*const shoppingList_model = require('../models/shoppingList-model');
 const shoppingList_view = require('../views/shoppingList-view');
 
@@ -142,7 +140,7 @@ const post_shoppingList = (req, res, next) => {
     });
 };*/
 
-module.exports.get_products = get_products;
+//module.exports.get_products = get_products;
 /*module.exports.get_shoppingList = get_shoppingList;
 module.exports.post_shoppingList = post_shoppingList;
 >>>>>>> Ostoslista-tasolle asti toteutettu
